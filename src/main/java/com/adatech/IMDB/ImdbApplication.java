@@ -1,13 +1,13 @@
-package com.adatech.ToList;
+package com.adatech.IMDB;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ToListApplication {
+public class ImdbApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ToListApplication.class, args);
+		SpringApplication.run(ImdbApplication.class, args);
 	}
 
 }

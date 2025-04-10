@@ -1,10 +1,10 @@
-package com.adatech.ToList;
+package com.adatech.IMDB;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ToListApplicationTests {
+class ImdbApplicationTests {
 
 	@Test
 	void contextLoads() {
