@@ -1,5 +1,4 @@
 package com.adatech.IMDB.vo;
 
-public class FilmeVO {
-
+public class Rating {
 }
