@@ -1,4 +1,33 @@
 package com.adatech.IMDB.converter;
 
+import com.adatech.IMDB.dto.FilmeDTO;
+import com.adatech.IMDB.model.Filme;
+import org.springframework.stereotype.Component;
+import com.adatech.IMDB.vo.FilmeVO;
+
+@Component
 public class FilmeConverter {
+
+    public Filme converteParaFilme(FilmeDTO filmeDTO) {
+        if (filmeDTO == null) {
+            throw new IllegalArgumentException("FilmeDTO não pode ser nulo");
+        }
+
+        Filme filme = new Filme();
+        filme.setTitle(filmeDTO.getTitle());
+        filme.setYear(filmeDTO.getYear());
+        return filme;
+    }
+
+    public FilmeVO converteParaFilmeVO(Filme filme) {
+        if (filme == null) {
+            throw new IllegalArgumentException("Filme não pode ser nulo");
+        }
+
+        FilmeVO filmeVO = new FilmeVO();
+        filmeVO.setId(filme.getId());
+        filmeVO.setTitle(filme.getTitle());
+        filmeVO.setYear(filme.getYear());
+        return filmeVO;
+    }
 }
