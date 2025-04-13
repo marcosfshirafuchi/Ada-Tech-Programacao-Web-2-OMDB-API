@@ -1,37 +1,50 @@
-import com.adatech.IMDB.client.FilmeClientOMDBFeign;
+package com.adatech.IMDB.service;
+
 import com.adatech.IMDB.converter.FilmeConverter;
 import com.adatech.IMDB.dto.FilmeDTO;
 import com.adatech.IMDB.model.Filme;
 import com.adatech.IMDB.repository.FilmeRepository;
+import com.adatech.IMDB.vo.FilmeOMDB;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import com.adatech.IMDB.vo.FilmeOMDB;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class FilmeService {
 
-    @Value("${imdb.apikey}")
-    private String apiKey;
-
-    private final FilmeClientOMDBFeign filmeClientFeign;
     private final FilmeRepository filmeRepository;
     private final FilmeConverter filmeConverter;
 
-    public FilmeService(FilmeClientOMDBFeign filmeClientFeign, FilmeRepository filmeRepository, FilmeConverter filmeConverter) {
-        this.filmeClientFeign = filmeClientFeign;
+    @Value("${url.apiFilmes}")
+    private String urlApiFilmes;
+
+    private final String PARAM_API_KEY = "&apikey=158d281a";
+
+    public FilmeService(FilmeRepository filmeRepository, FilmeConverter filmeConverter) {
         this.filmeRepository = filmeRepository;
         this.filmeConverter = filmeConverter;
     }
 
+    public FilmeOMDB getInformacoesFilme(String titulo) {
+        RestTemplate restTemplate = new RestTemplate();
+        FilmeOMDB filmeOMDB = restTemplate.getForObject(urlApiFilmes + "?t=" + titulo + PARAM_API_KEY, FilmeOMDB.class);
 
-    public FilmeOMDB getFilme(String tema) {
-        if (tema == null || tema.isEmpty()) {
-            throw new IllegalArgumentException("O título do filme (tema) não pode ser nulo ou vazio");
+        if (filmeOMDB == null || "False".equalsIgnoreCase(filmeOMDB.getResponse())) {
+            throw new IllegalArgumentException("Filme não encontrado na base OMDB.");
         }
-        return filmeClientFeign.getFilme(tema, apiKey);
+
+        return filmeOMDB;
     }
+
+//    public FilmeOMDB getFilme(String tema) {
+//        if (tema == null || tema.isEmpty()) {
+//            throw new IllegalArgumentException("O título do filme (tema) não pode ser nulo ou vazio");
+//        }
+//        return filmeClientFeign.getFilme(tema, apiKey);
+//    }
 
 
     public Filme save(FilmeDTO filmeDTO) {
@@ -48,4 +61,13 @@ public class FilmeService {
         Optional<Filme> filme = filmeRepository.findById(id);
         return filme.orElseThrow(() -> new IllegalArgumentException("Filme não encontrado com o ID: " + id));
     }
+
+    public List<Filme> getForAll() {
+        List<Filme> filmes = filmeRepository.findAll();
+        if (filmes.isEmpty()) {
+            throw new IllegalArgumentException("Lista de filmes vazia!");
+        }
+        return filmes;
+    }
+
 }
