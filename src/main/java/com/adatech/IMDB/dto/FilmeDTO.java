@@ -1,22 +1,27 @@
 package com.adatech.IMDB.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class FilmeDTO {
+    @JsonProperty("Title")
     private String title;
+
+    @JsonProperty("Year")
     private String year;
 
-
-    //coonstrutor
+    // Construtor
     public FilmeDTO(String title, String year) {
-        title = title;
-        year = year;
+        this.title = title;
+        this.year = year;
     }
-    // get e set
+
+    // Getters e Setters
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
-        title = title;
+        this.title = title;
     }
 
     public String getYear() {
@@ -24,8 +29,7 @@ public class FilmeDTO {
     }
 
     public void setYear(String year) {
-        year = year;
+        this.year = year;
     }
-
 }
 
