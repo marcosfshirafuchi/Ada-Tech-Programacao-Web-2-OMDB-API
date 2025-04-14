@@ -35,14 +35,19 @@
 
 ## Diagrama de classes
 <p align = center>
-<a href="https://ibb.co/hRSh0kP4"><img src="https://i.ibb.co/SXzWS2hM/Ada-Tech-IMDB.jpg" alt="Ada-Tech-IMDB" border="0"></a>
+<a href="https://ibb.co/zWDpZhr1"><img src="https://i.ibb.co/cKV0Qc1P/Ada-Tech-IMDB-Atualizado.jpg" alt="Ada-Tech-IMDB-Atualizado" border="0"></a>
 </p>
 
 ## Tema do projeto
-- Desenvolvemos uma aplicação que busca filmes através da api: OMDb API
+- Desenvolvemos uma aplicação que busca o nome original do filme através da api: OMDb API
+
 
 ## Site da api: OMDB
-https://www.omdbapi.com/
+<p align = center>
+<a href="https://ibb.co/FL5M2R4X"><img src="https://i.ibb.co/rRxSYD23/OMDB-API.png" alt="OMDB-API" border="0"></a><br><br>
+  https://www.omdbapi.com/
+</p>
+
 
 
 
