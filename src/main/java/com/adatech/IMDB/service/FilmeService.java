@@ -57,7 +57,7 @@ public class FilmeService {
     }
 
 
-    public Filme getById(long id) {
+    public Filme getById(Long id) {
         Optional<Filme> filme = filmeRepository.findById(id);
         return filme.orElseThrow(() -> new IllegalArgumentException("Filme não encontrado com o ID: " + id));
     }

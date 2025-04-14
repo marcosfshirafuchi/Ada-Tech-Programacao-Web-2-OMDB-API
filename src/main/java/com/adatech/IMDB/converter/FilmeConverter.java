@@ -23,7 +23,6 @@ public class FilmeConverter {
         if (filme == null) {
             throw new IllegalArgumentException("Filme não pode ser nulo");
         }
-
         FilmeVO filmeVO = new FilmeVO();
         filmeVO.setId(filme.getId());
         filmeVO.setTitle(filme.getTitle());
