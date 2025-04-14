@@ -6,28 +6,13 @@ import jakarta.persistence.*;
 public class Filme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    @Column
-    String title;
-    @Column
-    String year;
+    private Long id;
+    @Column (name = "titulo")
+    private String title;
+    @Column (name = "ano")
+    private String year;
 
     //GET E SET
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        title = title;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        year = year;
-    }
 
     public Long getId() {
         return id;
@@ -35,6 +20,22 @@ public class Filme {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 }
 

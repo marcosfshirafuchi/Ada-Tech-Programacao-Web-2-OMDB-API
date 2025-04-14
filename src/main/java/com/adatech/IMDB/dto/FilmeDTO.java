@@ -1,30 +1,30 @@
 package com.adatech.IMDB.dto;
 
 public class FilmeDTO {
-    private String Title;
-    private String Year;
+    private String title;
+    private String year;
 
 
     //coonstrutor
     public FilmeDTO(String title, String year) {
-        Title = title;
-        Year = year;
+        title = title;
+        year = year;
     }
     // get e set
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        title = title;
     }
 
     public String getYear() {
-        return Year;
+        return year;
     }
 
     public void setYear(String year) {
-        Year = year;
+        year = year;
     }
 
 }
