@@ -35,7 +35,7 @@
 
 ## Diagrama de classes
 <p align = center>
-<a href="https://ibb.co/zWDpZhr1"><img src="https://i.ibb.co/cKV0Qc1P/Ada-Tech-IMDB-Atualizado.jpg" alt="Ada-Tech-IMDB-Atualizado" border="0"></a>
+<a href="https://ibb.co/Kc0pW924"><img src="https://i.ibb.co/6cn7F4H9/Ada-Tech-IMDB-Atualizado-2.jpg" alt="Ada-Tech-IMDB-Atualizado-2" border="0"></a>
 </p>
 
 ## Tema do projeto
