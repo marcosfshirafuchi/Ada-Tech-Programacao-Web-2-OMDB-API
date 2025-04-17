@@ -2,6 +2,8 @@ package com.adatech.IMDB.service;
 
 import com.adatech.IMDB.converter.FilmeConverter;
 import com.adatech.IMDB.dto.FilmeDTO;
+import com.adatech.IMDB.exception.FilmeNaoEncontradoException;
+import com.adatech.IMDB.exception.ListaVaziaException;
 import com.adatech.IMDB.model.Filme;
 import com.adatech.IMDB.repository.FilmeRepository;
 import com.adatech.IMDB.vo.FilmeOMDB;
@@ -29,23 +31,19 @@ public class FilmeService {
     }
 
     public FilmeOMDB getInformacoesFilme(String titulo) {
+        if (titulo == null || titulo.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo de busca está vazio! Preencha com um título de filme válido.");
+        }
+
         RestTemplate restTemplate = new RestTemplate();
         FilmeOMDB filmeOMDB = restTemplate.getForObject(urlApiFilmes + "?t=" + titulo + PARAM_API_KEY, FilmeOMDB.class);
 
         if (filmeOMDB == null || "False".equalsIgnoreCase(filmeOMDB.getResponse())) {
-            throw new IllegalArgumentException("Filme não encontrado na base OMDB.");
+            throw new FilmeNaoEncontradoException("Filme não encontrado na base OMDB.");
         }
 
         return filmeOMDB;
     }
-
-//    public FilmeOMDB getFilme(String tema) {
-//        if (tema == null || tema.isEmpty()) {
-//            throw new IllegalArgumentException("O título do filme (tema) não pode ser nulo ou vazio");
-//        }
-//        return filmeClientFeign.getFilme(tema, apiKey);
-//    }
-
 
     public Filme save(FilmeDTO filmeDTO) {
         if (filmeDTO == null) {
@@ -56,16 +54,15 @@ public class FilmeService {
         return filmeRepository.save(filme);
     }
 
-
     public Filme getById(Long id) {
         Optional<Filme> filme = filmeRepository.findById(id);
-        return filme.orElseThrow(() -> new IllegalArgumentException("Filme não encontrado com o ID: " + id));
+        return filme.orElseThrow(() -> new FilmeNaoEncontradoException("Filme não encontrado com o ID: " + id));
     }
 
     public List<Filme> getForAll() {
         List<Filme> filmes = filmeRepository.findAll();
         if (filmes.isEmpty()) {
-            throw new IllegalArgumentException("Lista de filmes vazia!");
+            throw new ListaVaziaException("Nenhum filme cadastrado no sistema.");
         }
         return filmes;
     }

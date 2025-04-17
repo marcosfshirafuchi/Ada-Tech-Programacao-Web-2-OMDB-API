@@ -12,7 +12,6 @@ public class FilmeConverter {
         if (filmeDTO == null) {
             throw new IllegalArgumentException("FilmeDTO não pode ser nulo");
         }
-
         Filme filme = new Filme();
         filme.setTitle(filmeDTO.getTitle());
         filme.setYear(filmeDTO.getYear());
