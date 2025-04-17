@@ -17,7 +17,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Title\": \"Home Alone 2: Lost in New York\",\r\n    \"Year\": \"1992\"\r\n}",
+					"raw": "{\r\n    \"Title\": \"The Forge\",\r\n    \"Year\": \"2024\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -46,6 +46,30 @@
 					"type": "noauth"
 				},
 				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/challenge/filme/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"filme",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar o filme pelo ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
 				"header": [],
 				"url": {
 					"raw": "http://localhost:8080/challenge/filme/1",
@@ -96,7 +120,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/challenge/filme?titulo=/Home Alone 2",
+					"raw": "http://localhost:8080/challenge/filme?titulo=home alone",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +133,7 @@
 					"query": [
 						{
 							"key": "titulo",
-							"value": "/Home Alone 2"
+							"value": "home alone"
 						}
 					]
 				}

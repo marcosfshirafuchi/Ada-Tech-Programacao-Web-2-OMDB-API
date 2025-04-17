@@ -67,4 +67,11 @@ public class FilmeService {
         return filmes;
     }
 
+    public void delete(Long id) {
+        Filme filme = filmeRepository.findById(id)
+                .orElseThrow(() -> new FilmeNaoEncontradoException("Filme não encontrado com o ID: " + id));
+        filmeRepository.delete(filme);
+    }
+
+
 }

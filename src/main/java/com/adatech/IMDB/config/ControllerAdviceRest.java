@@ -54,6 +54,22 @@ public class ControllerAdviceRest {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ErroPadrao> handleValidationException(MethodArgumentNotValidException ex) {
+        ErroPadrao erro = new ErroPadrao();
+        erro.setCodigoErro("400");
+        erro.setMensagem("Falha na validação do body do Json.");
+        erro.setDataHora(LocalDateTime.now());
+
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getFieldErrors().forEach(field -> {
+            errors.put(field.getField(), field.getDefaultMessage());
+        });
+
+        erro.setErrors(errors);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erro);
+    }
+
 }
 
 

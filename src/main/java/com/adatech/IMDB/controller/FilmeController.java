@@ -6,6 +6,7 @@ import com.adatech.IMDB.model.Filme;
 import com.adatech.IMDB.service.FilmeService;
 import com.adatech.IMDB.vo.FilmeOMDB;
 import com.adatech.IMDB.vo.FilmeVO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class FilmeController {
     }
 
     @PostMapping
-    public ResponseEntity<FilmeVO> saveFilme(@RequestBody FilmeDTO filmeDTO) {
+    public ResponseEntity<FilmeVO> saveFilme(@RequestBody @Valid FilmeDTO filmeDTO) {
         FilmeVO filmeVO = filmeConverter.converteParaFilmeVO(filmeService.save(filmeDTO));
         addHateoas(filmeVO);
         return ResponseEntity.status(HttpStatus.CREATED).body(filmeVO);
@@ -67,4 +68,11 @@ public class FilmeController {
         filmeVO.add(linkTo(methodOn(FilmeController.class).getById(filmeVO.getId()))
                 .withSelfRel());
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteFilme(@PathVariable Long id) {
+        filmeService.delete(id);
+        return ResponseEntity.noContent().build(); // HTTP 204
+    }
+
 }
