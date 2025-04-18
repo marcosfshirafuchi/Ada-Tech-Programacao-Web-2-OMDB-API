@@ -35,7 +35,7 @@
 
 ## Diagrama de classes
 <p align = center>
-<a href="https://ibb.co/Kc0pW924"><img src="https://i.ibb.co/6cn7F4H9/Ada-Tech-IMDB-Atualizado-2.jpg" alt="Ada-Tech-IMDB-Atualizado-2" border="0"></a>
+<a href="https://ibb.co/kgBFG7bR"><img src="https://i.ibb.co/4ZtxFqv6/Ada-Tech-IMDB-Final.jpg" alt="Ada-Tech-IMDB-Final" border="0"></a>
 </p>
 
 ## Tema do projeto
@@ -43,13 +43,82 @@
 
 
 ## Site da api: OMDB
+
 <p align = center>
 <a href="https://ibb.co/FL5M2R4X"><img src="https://i.ibb.co/rRxSYD23/OMDB-API.png" alt="OMDB-API" border="0"></a><br><br>
-  https://www.omdbapi.com/
+  
 </p>
 
+### Endereco da api do OMDB
+https://www.omdbapi.com/
+
+## Testar a API
+- Primeiro baixe o projeto: git clone https://github.com/marcosfshirafuchi/Ada-Tech-Programacao-Web-2.git
+- Importe o arquivo json que está na pasta: <b>ArquivoJsonParaOPostman</b> no Postman
+- Roda o programa no IntelliJ
+
+## Endpoints da aplicação
+
+| Nome do Endpoint         | URL do método                                  | Método no Postman |
+| ------------------------ | ---------------------------------------------- | ----------------- |
+| Buscar o filme pelo nome | http://localhost:8080/filme?titulo=the forge   | GET               |
+| Salvar filme             | http://localhost:8080/filme                    | POST              |
+| Buscar lista de filmes   | http://localhost:8080/filme/listarFilmes       | GET               |
+| Buscar o filme pelo ID   | http://localhost:8080/filme/1                  | GET               |
+| Deletar o filme pelo ID  | http://localhost:8080/filme/1                  | DELETE            |
+
+### Exemplo de cada endpoints
+
+#### Buscar o filme pelo nome
+
+<a href="https://ibb.co/ccgSLZtf"><img src="https://i.ibb.co/vxw6YTmy/GET-01.png" alt="GET-01" border="0"></a>
+
+#### Salvar filme
 
 
+<a href="https://ibb.co/7xmF6T84"><img src="https://i.ibb.co/JWJPMb0Q/POST.png" alt="POST" border="0"></a>
+
+#### Buscar lista de filmes
+
+<a href="https://ibb.co/5WnrRTQ3"><img src="https://i.ibb.co/wNwSzynq/GET-02.png" alt="GET-02" border="0"></a>
 
 
+#### Buscar o filme pelo ID
 
+
+<a href="https://ibb.co/PsNLKvdP"><img src="https://i.ibb.co/SDPjb4zM/GET-03.png" alt="GET-03" border="0"></a>
+
+      
+#### Deletar o filme pelo ID
+
+
+<a href="https://ibb.co/zhP5DyB1"><img src="https://i.ibb.co/8DPBtWfJ/DELETE.png" alt="DELETE" border="0"></a>
+
+
+## Banco de dados H2 DataBase
+
+### Endereco da url do banco de dados
+http://localhost:8080/h2
+
+### Exemplo da consulta no banco de dados
+
+<a href="https://ibb.co/hJD5tdCP"><img src="https://i.ibb.co/ycWTbkVw/H2-Data-Base-01.png" alt="H2-Data-Base-01" border="0"></a>
+<br><br>
+<a href="https://ibb.co/4ZbfL2tL"><img src="https://i.ibb.co/VWFNGx9G/H2-Data-Base-02.png" alt="H2-Data-Base-02" border="0"></a>  
+<br><br>
+<a href="https://ibb.co/5hxXSRNN"><img src="https://i.ibb.co/hF1x4mPP/H2-Data-Base-03.png" alt="H2-Data-Base-03" border="0"></a>
+<br><br>  
+<a href="https://ibb.co/F4ttx7WX"><img src="https://i.ibb.co/chddgTvw/H2-Data-Base-04.png" alt="H2-Data-Base-04" border="0"></a>  
+<br><br>
+ 
+
+
+## Swagger (OpenAPI) da API OMDB
+
+### Endereco da url do Swagger (OpenAPI) da API OMDB
+http://localhost:8080/swagger-ui/index.html
+
+### Exemplo do Swagger (OpenAPI) da API OMDB
+<p align = center>
+<a href="https://ibb.co/MyWfkPrb"><img src="https://i.ibb.co/5Xtkhsmd/Swagger.png" alt="Swagger" border="0"></a>
+</p>
