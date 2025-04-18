@@ -6,6 +6,7 @@ import com.adatech.IMDB.model.Filme;
 import com.adatech.IMDB.service.FilmeService;
 import com.adatech.IMDB.vo.FilmeOMDB;
 import com.adatech.IMDB.vo.FilmeVO;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,12 +30,16 @@ public class FilmeController {
 
 
     @GetMapping
+    @Operation(summary = "Busca um filme pela api do OMDB.",
+            description = "Retorna um filme pela api do OMDB. Exemplo: The forge.")
     public ResponseEntity<FilmeOMDB> getFilme(@RequestParam("titulo") String titulo) {
         FilmeOMDB filmeOMDB = filmeService.getInformacoesFilme(titulo);
         return ResponseEntity.status(HttpStatus.OK).body(filmeOMDB);
     }
 
     @PostMapping
+    @Operation(summary = "Salva um filme pelo titulo(Title) e ano(Year) do filme.",
+            description = "Retorna uma lista de todos os usuários cadastrados.")
     public ResponseEntity<FilmeVO> saveFilme(@RequestBody @Valid FilmeDTO filmeDTO) {
         FilmeVO filmeVO = filmeConverter.converteParaFilmeVO(filmeService.save(filmeDTO));
         addHateoas(filmeVO);
@@ -42,6 +47,8 @@ public class FilmeController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Listar o filme cadastrado pelo Id.",
+            description = "Retorna um filme cadastrado pelo Id.")
     public ResponseEntity<FilmeVO> getById(@PathVariable("id") Long id) {
 
         FilmeVO filmeVO = filmeConverter.converteParaFilmeVO(filmeService.getById(id));
@@ -49,6 +56,8 @@ public class FilmeController {
     }
 
     @GetMapping("/listarFilmes")
+    @Operation(summary = "Listar todos os filmes.",
+            description = "Retorna uma lista de todos os filmes cadastrados.")
     public ResponseEntity<List<FilmeVO>> getAllFilmes() {
         List<Filme> filmes = filmeService.getForAll();
 
@@ -70,6 +79,8 @@ public class FilmeController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Apaga um filme da lista por Id.",
+            description = "Apaga um filme da lista pelo id solicitado.")
     public ResponseEntity<Void> deleteFilme(@PathVariable Long id) {
         filmeService.delete(id);
         return ResponseEntity.noContent().build(); // HTTP 204

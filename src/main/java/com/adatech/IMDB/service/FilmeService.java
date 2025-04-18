@@ -39,7 +39,7 @@ public class FilmeService {
         FilmeOMDB filmeOMDB = restTemplate.getForObject(urlApiFilmes + "?t=" + titulo + PARAM_API_KEY, FilmeOMDB.class);
 
         if (filmeOMDB == null || "False".equalsIgnoreCase(filmeOMDB.getResponse())) {
-            throw new FilmeNaoEncontradoException("Filme não encontrado na base OMDB.");
+            throw new FilmeNaoEncontradoException("Filme não encontrado na base do OMDB.");
         }
 
         return filmeOMDB;
@@ -62,7 +62,7 @@ public class FilmeService {
     public List<Filme> getForAll() {
         List<Filme> filmes = filmeRepository.findAll();
         if (filmes.isEmpty()) {
-            throw new ListaVaziaException("Nenhum filme cadastrado no sistema.");
+            throw new ListaVaziaException("Nenhum filme cadastrado na lista.");
         }
         return filmes;
     }
