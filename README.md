@@ -1,124 +1,128 @@
-# <a href="https://imgbb.com/"><img src="https://i.ibb.co/wNCRx9z/image-2025-01-04-T23-13-02-901-Z.png" alt="image-2025-01-04-T23-13-02-901-Z" border="0" width =150 heigth = 100></a> Desenvolva + : API REST
+<p align="center">
+  <img src="https://i.ibb.co/wNCRx9z/image-2025-01-04-T23-13-02-901-Z.png" alt="Desenvolva+" width="200"/>
+</p>
 
-#### Desenvolvido na linguagem Java por:
+# 🎬 Desenvolva+: API REST com Java e OMDb
+
+Aplicação desenvolvida como projeto final da Formação **Ada Tech - Programação Web 2**, com foco em consumir dados reais de filmes via **OMDb API**, persistindo e manipulando informações em uma API REST robusta construída com **Java 21 e Spring Boot**.
+
+---
+
+## 👨‍💻 Desenvolvido por
+
 - [Anderson Alves Santos](https://github.com/santos-anderson)
 - [Janaína Cruz](https://github.com/JanaCruzS)
 - [Marcos Shirafuchi](https://github.com/marcosfshirafuchi)
 
-## Principais Tecnologias
+---
 
-- <img width="70px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" title = "Java" /> <b>Java 21 :</b> Utilizamos a versão LTS mais recente do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
-- <img width="70px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" title = "IntelliJIDEA" /> <b>IntelliJIDEA :</b> Utilizamos o IntelliJIDEA como a IDEA para fazer os programas em Java;
-- <img width="80px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original-wordmark.svg" title = "Postman"/> <b>Postman :</b> Utilizamos a versão 11.40.4;
-- <img width="80px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg" title = "Spring boot"/><b>Spring boot :</b> Utilizamos a versão 3.4.4 para testar a API;
-- <img width="70px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" title = "H2 DataBase" /><b>H2 DataBase :</b> Utilizamos o banco de dados em memória;
+## 🚀 Sobre a aplicação
 
+Esta aplicação permite:
 
+- Buscar informações de filmes em tempo real via OMDb API;
+- Persistir os dados localmente em um banco de dados H2;
+- Consultar, cadastrar, listar e deletar filmes;
+- Acessar a documentação interativa com Swagger UI.
 
-## Ada Tech - API REST : IMDB
+Tudo isso com uma interface REST acessível por ferramentas como Postman ou qualquer cliente HTTP.
 
-### Evoluir o projeto do último módulo para uma API REST em Spring Boot com os seguintes itens:
-- Persistência em banco de dados (H2 ou Postgres);
-- Consumo de uma API externa pública; (opcional);
-- Autenticação Básica (opcional);
-- Swagger (opcional);
-- Frontend (opcional);
+---
 
-### Entregaveis
-- O projeto pode ser feito opcionalmente em grupos de 3 até 5 pessoas;
-- O projeto deverá ser entregue no github ou zipado no LMS;
-- Documentação no REAMDE.md, com os diagramas das classes principais e guia de uso;
-- Realizar uma apresentação com os pontos mais desafiadores do projeto, os perrengues passados e um resumo do que foi entregue e o que não pode ser entregue;
+## 🌐 Destaque: Integração com a OMDb API
 
-### Entrega.
-- Entregar o link do repositório do projeto no GitHub.
+A [**OMDb API (Open Movie Database)**](https://www.omdbapi.com/) é uma API REST gratuita e pública que fornece dados sobre filmes e séries. Nesta aplicação, ela é usada para **buscar informações precisas e atualizadas** sobre filmes a partir do título fornecido pelo usuário.
 
-## Diagrama de classes
-<p align = center>
-<a href="https://ibb.co/kgBFG7bR"><img src="https://i.ibb.co/4ZtxFqv6/Ada-Tech-IMDB-Final.jpg" alt="Ada-Tech-IMDB-Final" border="0"></a>
+<p align="center">
+  <img src="https://i.ibb.co/rRxSYD23/OMDB-API.png" alt="OMDB API" width="400"/>
 </p>
 
-## Tema do projeto
-- Desenvolvemos uma aplicação que busca o nome original do filme através da api: OMDb API
 
 
-## Site da api: OMDB
+---
 
-<p align = center>
-<a href="https://ibb.co/FL5M2R4X"><img src="https://i.ibb.co/rRxSYD23/OMDB-API.png" alt="OMDB-API" border="0"></a><br><br>
-  
-</p>
+## 🧰 Tecnologias Utilizadas
 
-### Endereco da api do OMDB
-https://www.omdbapi.com/
+| Ferramenta | Descrição |
+|-----------|-----------|
+| ![Java](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg) | **Java 21**: versão mais recente com suporte LTS |
+| ![Spring](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg) | **Spring Boot 3.4.4**: framework para APIs modernas |
+| ![IntelliJ](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg) | **IntelliJ IDEA**: IDE utilizada no desenvolvimento |
+| ![Postman](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original-wordmark.svg) | **Postman 11.40.4**: testamos todos os endpoints por aqui |
+| ![H2](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg) | **H2 Database**: banco de dados em memória |
+| Swagger UI | Documentação interativa para testar e visualizar a API |
 
-## Testar a API
-- Primeiro baixe o projeto: git clone https://github.com/marcosfshirafuchi/Ada-Tech-Programacao-Web-2.git
-- Importe o arquivo json que está na pasta: <b>ArquivoJsonParaOPostman</b> no Postman
-- Roda o programa no IntelliJ
+---
 
-## Endpoints da aplicação
+## 📌 Endpoints disponíveis
 
-| Nome do Endpoint         | URL do método                                  | Método no Postman |
-| ------------------------ | ---------------------------------------------- | ----------------- |
-| Buscar o filme pelo nome | http://localhost:8080/filme?titulo=the forge   | GET               |
-| Salvar filme             | http://localhost:8080/filme                    | POST              |
-| Buscar lista de filmes   | http://localhost:8080/filme/listarFilmes       | GET               |
-| Buscar o filme pelo ID   | http://localhost:8080/filme/1                  | GET               |
-| Deletar o filme pelo ID  | http://localhost:8080/filme/1                  | DELETE            |
+| Operação                   | URL                                      | Método HTTP |
+|---------------------------|------------------------------------------|-------------|
+| Buscar filme por nome     | `/filme?titulo=the forge`               | `GET`       |
+| Cadastrar filme           | `/filme`                                 | `POST`      |
+| Listar todos os filmes    | `/filme/listarFilmes`                    | `GET`       |
+| Buscar filme por ID       | `/filme/{id}`                            | `GET`       |
+| Deletar filme por ID      | `/filme/{id}`                            | `DELETE`    |
 
-### Exemplo de cada endpoints
+### Exemplo de payload para POST:
+```json
+{
+  "Title": "The Karate Kid Part II",
+  "Year": "1986"
+}
+```
 
-#### Buscar o filme pelo nome
+---
 
-<a href="https://ibb.co/ccgSLZtf"><img src="https://i.ibb.co/vxw6YTmy/GET-01.png" alt="GET-01" border="0"></a>
+## 🧪 Como testar a aplicação
 
-#### Salvar filme
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/marcosfshirafuchi/Ada-Tech-Programacao-Web-2.git
+   ```
+2. Rode o projeto no IntelliJ.
+3. Importe o arquivo JSON da pasta `ArquivoJsonParaOPostman` no Postman.
+4. Utilize os endpoints para testar as funcionalidades.
 
+---
 
-<a href="https://ibb.co/7xmF6T84"><img src="https://i.ibb.co/JWJPMb0Q/POST.png" alt="POST" border="0"></a>
+## 🛢️ Banco de Dados H2
 
-#### Buscar lista de filmes
-
-<a href="https://ibb.co/5WnrRTQ3"><img src="https://i.ibb.co/wNwSzynq/GET-02.png" alt="GET-02" border="0"></a>
-
-
-#### Buscar o filme pelo ID
-
-
-<a href="https://ibb.co/PsNLKvdP"><img src="https://i.ibb.co/SDPjb4zM/GET-03.png" alt="GET-03" border="0"></a>
-
-      
-#### Deletar o filme pelo ID
-
-
-<a href="https://ibb.co/zhP5DyB1"><img src="https://i.ibb.co/8DPBtWfJ/DELETE.png" alt="DELETE" border="0"></a>
-
-
-## Banco de dados H2 DataBase
-
-### Endereco da url do banco de dados
+Acesse:
+```
 http://localhost:8080/h2
+```
+Utilize para inspecionar os dados persistidos durante o uso da aplicação.
 
-### Exemplo da consulta no banco de dados
+---
 
-<a href="https://ibb.co/hJD5tdCP"><img src="https://i.ibb.co/ycWTbkVw/H2-Data-Base-01.png" alt="H2-Data-Base-01" border="0"></a>
-<br><br>
-<a href="https://ibb.co/4ZbfL2tL"><img src="https://i.ibb.co/VWFNGx9G/H2-Data-Base-02.png" alt="H2-Data-Base-02" border="0"></a>  
-<br><br>
-<a href="https://ibb.co/5hxXSRNN"><img src="https://i.ibb.co/hF1x4mPP/H2-Data-Base-03.png" alt="H2-Data-Base-03" border="0"></a>
-<br><br>  
-<a href="https://ibb.co/F4ttx7WX"><img src="https://i.ibb.co/chddgTvw/H2-Data-Base-04.png" alt="H2-Data-Base-04" border="0"></a>  
-<br><br>
- 
+## 📖 Swagger UI
 
-
-## Swagger (OpenAPI) da API OMDB
-
-### Endereco da url do Swagger (OpenAPI) da API OMDB
+Acesse a documentação interativa em:
+```
 http://localhost:8080/swagger-ui/index.html
+```
 
-### Exemplo do Swagger (OpenAPI) da API OMDB
-<p align = center>
-<a href="https://ibb.co/MyWfkPrb"><img src="https://i.ibb.co/5Xtkhsmd/Swagger.png" alt="Swagger" border="0"></a>
+<p align="center">
+  <img src="https://i.ibb.co/5Xtkhsmd/Swagger.png" alt="Swagger UI"/>
 </p>
+
+---
+
+## 📌 Diagrama de Classes
+
+<p align="center">
+  <img src="https://i.ibb.co/4ZtxFqv6/Ada-Tech-IMDB-Final.jpg" alt="Diagrama de Classes"/>
+</p>
+
+---
+
+## 🎯 Objetivo do Projeto
+
+Este projeto teve como finalidade consolidar o aprendizado prático em Java e Spring Boot com consumo de APIs externas, modelagem de dados e boas práticas REST. Além disso, promoveu a colaboração em equipe, divisão de tarefas e entrega de um produto funcional, completo e documentado.
+
+---
+
+## 📅 Entrega
+
+Projeto entregue no GitHub conforme diretrizes da **Formação Desenvolva+ - Ada Tech**.
