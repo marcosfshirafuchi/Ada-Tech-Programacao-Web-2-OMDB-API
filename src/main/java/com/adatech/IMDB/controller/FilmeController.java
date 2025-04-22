@@ -38,13 +38,16 @@ public class FilmeController {
     }
 
     @PostMapping
-    @Operation(summary = "Salva um filme pelo titulo(Title) e ano(Year) do filme.",
-            description = "Retorna uma lista de todos os usuários cadastrados.")
+    @Operation(summary = "Salva um filme válido da api pelo título digitado",
+            description = "Retorna com os dados do filme válido da api: title, plot, actors, genre, year e runtime")
     public ResponseEntity<FilmeVO> saveFilme(@RequestBody @Valid FilmeDTO filmeDTO) {
-        FilmeVO filmeVO = filmeConverter.converteParaFilmeVO(filmeService.save(filmeDTO));
+        FilmeVO filmeVO = filmeConverter.converteParaFilmeVO(
+                filmeService.save(filmeDTO)
+        );
         addHateoas(filmeVO);
         return ResponseEntity.status(HttpStatus.CREATED).body(filmeVO);
     }
+
 
     @GetMapping("/{id}")
     @Operation(summary = "Listar o filme cadastrado pelo Id.",

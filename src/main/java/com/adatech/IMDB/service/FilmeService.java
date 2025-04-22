@@ -46,13 +46,14 @@ public class FilmeService {
     }
 
     public Filme save(FilmeDTO filmeDTO) {
-        if (filmeDTO == null) {
-            throw new IllegalArgumentException("FilmeDTO não pode ser nulo");
+        if (filmeDTO == null || filmeDTO.getTitle() == null || filmeDTO.getTitle().isBlank()) {
+            throw new IllegalArgumentException("O título do filme não pode ser nulo ou vazio");
         }
 
-        Filme filme = filmeConverter.converteParaFilme(filmeDTO);
+        Filme filme = filmeConverter.converteOMDBParaFilme(getInformacoesFilme(filmeDTO.getTitle()));
         return filmeRepository.save(filme);
     }
+
 
     public Filme getById(Long id) {
         Optional<Filme> filme = filmeRepository.findById(id);

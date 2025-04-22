@@ -8,14 +8,9 @@ public class FilmeDTO {
     @NotBlank(message = "O título não pode ser nulo ou em branco.")
     private String title;
 
-    @JsonProperty("Year")
-    @NotBlank(message = "O ano de lançamento não pode ser nulo ou em branco.")
-    private String year;
-
     // Construtor
-    public FilmeDTO(String title, String year) {
+    public FilmeDTO(String title) {
         this.title = title;
-        this.year = year;
     }
 
     // Getters e Setters
@@ -27,13 +22,6 @@ public class FilmeDTO {
         this.title = title;
     }
 
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
 
 }
 
