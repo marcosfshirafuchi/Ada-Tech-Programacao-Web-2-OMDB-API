@@ -67,8 +67,7 @@ A [**OMDb API (Open Movie Database)**](https://www.omdbapi.com/) é uma API REST
 ### Exemplo de payload para POST:
 ```json
 {
-  "Title": "The Karate Kid Part II",
-  "Year": "1986"
+  "Title": "The Karate Kid Part II"
 }
 ```
 
@@ -112,7 +111,7 @@ http://localhost:8080/swagger-ui/index.html
 ## 📌 Diagrama de Classes
 
 <p align="center">
-  <img src="https://i.ibb.co/4ZtxFqv6/Ada-Tech-IMDB-Final.jpg" alt="Diagrama de Classes"/>
+  <a href="https://ibb.co/svLCr2VC"><img src="https://i.ibb.co/bgpFnPKF/Ada-Tech-IMDB-Oficial.jpg" alt="Diagrama de Classes" border="0"></a>
 </p>
 
 ---
